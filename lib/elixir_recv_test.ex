@@ -62,7 +62,7 @@ defmodule ElixirRecvTest do
   Does not loop
   """
   def hola_no_recurse do
-    IO.puts "Process: in 'hola'"
+    IO.puts "Process: in 'hola_no_recurse'"
     receive do
       {sender, msg} ->
         IO.puts "Process: recv msg: #{msg} from"
@@ -79,7 +79,7 @@ defmodule ElixirRecvTest do
   Loops inside the `receive` block
   """
   def hola_recv_recurse do
-    IO.puts "Process: in 'hola'"
+    IO.puts "Process: in 'hola_recv_recurse'"
     receive do
       {sender, msg} ->
         IO.puts "Process: recv msg: #{msg} from"
@@ -97,7 +97,7 @@ defmodule ElixirRecvTest do
   Loops after the `receive` block
   """
   def hola_tail_recurse do
-    IO.puts "Process: in 'hola'"
+    IO.puts "Process: in 'hola_tail_recurse'"
     receive do
       {sender, msg} ->
         IO.puts "Process: recv msg: #{msg} from"
@@ -118,7 +118,7 @@ defmodule ElixirRecvTest do
   Loops after the `receive` block
   """
   def hola_tail_recurse_two do
-    IO.puts "Process: in 'hola'"
+    IO.puts "Process: in 'hola_tail_recurse_two'"
     receive do
       {sender, msg} ->
         IO.puts "Process: recv msg: #{msg} from"
