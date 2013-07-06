@@ -40,6 +40,8 @@ defmodule ElixirRecvTest do
     sender_pid <- {self, text}
     receive do
       {:ok, msg} -> IO.puts "send_msg: received reply `#{msg}`"
+    after
+      1000 -> IO.puts "send_msg: didn't get a reply"
     end
   end
 
